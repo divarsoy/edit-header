@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) or die();
 add_action( 'wp_head', 'add_custom_content_before_header' );
 function add_custom_content_before_header() {
     echo '<div class="header-wrapper">';
-    echo do_shortcode(esc_attr( get_option('header-text')));
+    echo do_shortcode( get_option('header-text'));
     echo '</div>';
 }
 
@@ -40,7 +40,7 @@ function edit_header_settings_page() {
         <?php
         settings_fields( 'edit-header-settings-group' );
         do_settings_sections( 'edit-header-settings-group' );
-        wp_editor( esc_attr( get_option('header-text')), "header-text");
+        wp_editor( get_option('header-text'), "header-text");
         submit_button();
         ?>
     </form>
